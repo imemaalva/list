@@ -1,23 +1,25 @@
 package uaslp.objetos.list.arrayList;
+import uaslp.objetos.list.Iterator;
 
-public class ArrayListIterator {
+public class ArrayListIterator<T> implements Iterator<T> {
 
-    private uaslp.objetos.list.arrayList.ArrayList arrayList;
+    private ArrayList<T> arrayList;
     private int currentItem;
 
-    public  ArrayListIterator(uaslp.objetos.list.arrayList.ArrayList arrayList) {
-        this.arrayList = arrayList;
+    public ArrayListIterator(ArrayList<T> arrayList){
+        this.arrayList=arrayList;
     }
 
-    public boolean hasNext() {
-        return currentItem < arrayList.getSize();
+    @Override
+    public boolean hasNext(){
+        return currentItem < arrayList.getSize() ;
     }
 
-    public String next() {
-        String data = arrayList.getAt(currentItem);
-
+    @Override
+    public T next(){
+        T data=arrayList.getAt(currentItem);
         currentItem++;
-
         return data;
     }
 }
+
