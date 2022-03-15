@@ -16,11 +16,11 @@ public class Main {
         List<String> team5 = new LinkedList<>();
         List<String> team6 = new LinkedList<>();
 
-        inter(team1,team2,team3, 0);
-        inter(team4,team5,team6, 1);
+        function(team1,team2,team3, 0);
+        function(team4,team5,team6, 1);
     }
 
-    public static void inter(List<String> team1, List<String> team2, List<String> team3, int controller) {
+    public static void function(List<String> team1, List<String> team2, List<String> team3, int controller) {
         controller*=3;
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
