@@ -1,12 +1,12 @@
 package uaslp.objetos.list.arrayList;
 import uaslp.objetos.list.Iterator;
 
-public class ArrayListIterator implements Iterator{
+public class ArrayListIterator <T> implements Iterator <T>{
 
-    private final ArrayList arrayList;
+    private final ArrayList<T> arrayList;
     private int currentItem;
 
-    public ArrayListIterator(ArrayList arrayList){
+    public ArrayListIterator(ArrayList <T> arrayList){
         this.arrayList=arrayList;
     }
 
@@ -16,8 +16,8 @@ public class ArrayListIterator implements Iterator{
     }
 
     @Override
-    public String next(){
-        String data=arrayList.getAt(currentItem);
+    public T next(){
+        T data=arrayList.getAt(currentItem);
         currentItem++;
         return data;
     }
