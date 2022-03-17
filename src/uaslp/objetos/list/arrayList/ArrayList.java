@@ -30,9 +30,6 @@ public class ArrayList<T> implements List<T> {
         if(size == array.length){
             increaseArrayList();
         }
-        /*for(int i=0;i< array.length;i++){
-            array[i+1]=array[i];
-        }*/
         if (size >= 0) System.arraycopy(array, 0, array, 1, size);
         array[0]=data;
         size++;
@@ -43,11 +40,6 @@ public class ArrayList<T> implements List<T> {
         if (index < 0 || index >= size) {
             return;
         }
-
-        /*for(int i=index;i<size-1;i++)
-        {
-            array[i]=array[i+1];
-        }*/
         if (size - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, size - 1 - index);
         array[size-1]=null;
         size--;
