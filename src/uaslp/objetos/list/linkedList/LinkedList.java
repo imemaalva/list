@@ -1,14 +1,14 @@
 package uaslp.objetos.list.linkedList;
 import uaslp.objetos.list.List;
 
-public class LinkedList<T> implements List<T> {
-    private Node<T> head;
-    private Node<T> tail;
+public class LinkedList implements List{
+    private Node head;
+    private Node tail;
     private int size;
 
     @Override
-    public void addAtTail(T data) {
-        Node<T> node = new Node<>(data);
+    public void addAtTail(String data) {
+        Node node = new Node(data);
 
         if (size == 0) {
             head = node;
@@ -22,8 +22,8 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public void addAtFront(T data) {
-        Node<T> node = new Node<>(data);
+    public void addAtFront(String data) {
+        Node node = new Node(data);
 
         if (size == 0) {
             tail = node;
@@ -38,7 +38,7 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public void remove(int index) {
-        Node<T> node = findNode(index);
+        Node node = findNode(index);
 
         if (node == null) {
             return;
@@ -72,27 +72,27 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public T getAt(int index) {
-        Node<T> node = findNode(index);
+    public String getAt(int index) {
+        Node node = findNode(index);
 
         return node == null ? null : node.data;
     }
 
     @Override
-    public void setAt(int index, T data) {
-        Node<T> node = findNode(index);
+    public void setAt(int index, String data) {
+        Node node = findNode(index);
 
         if (node != null) {
             node.data = data;
         }
     }
 
-    private Node<T> findNode(int index) {
+    private Node findNode(int index) {
         if (index < 0 || index >= size) {
             return null;
         }
 
-        Node<T> node = head;
+        Node node = head;
         int currentIndex = 0;
 
         while (currentIndex != index) {
@@ -109,8 +109,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public LinkedListIterator<T> getIterator() {
-        //return  null;
-        return new LinkedListIterator<>(head);
+    public LinkedListIterator getIterator() {
+        return new LinkedListIterator(head);
     }
 }

@@ -6,19 +6,19 @@ import uaslp.objetos.list.arrayList.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> team1 = new ArrayList<>();
-        List<String> team2 = new ArrayList<>();
-        List<String> team3 = new ArrayList<>();
+        List team1 = new ArrayList();
+        List team2 = new ArrayList();
+        List team3 = new ArrayList();
 
-        List<String> team4 = new LinkedList<>();
-        List<String> team5 = new LinkedList<>();
-        List<String> team6 = new LinkedList<>();
+        List team4 = new LinkedList();
+        List team5 = new LinkedList();
+        List team6 = new LinkedList();
 
         function(team1,team2,team3);
         function(team4,team5,team6);
     }
 
-    public static void function(List<String> team1, List<String> team2, List<String> team3) {
+    public static void function(List team1, List team2, List team3) {
 
         team1.addAtTail("Jesús");
         team1.addAtTail("Salomón");
@@ -30,7 +30,7 @@ public class Main {
 
         team3.addAtFront("Imelda");
 
-        Iterator<String> iterator;
+        Iterator iterator;
 
         iterator = team1.getIterator();
 
