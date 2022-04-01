@@ -1,5 +1,7 @@
 package uaslp.objetos.list;
 
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.linkedList.LinkedList;
 import uaslp.objetos.list.arrayList.ArrayList;
 
@@ -13,14 +15,22 @@ public class Main {
         List<String> team4 = new LinkedList<>();
         List<String> team5 = new LinkedList<>();
         List<String> team6 = new LinkedList<>();
-
-        function(team1,team2,team3);
+    try{
+        //function(team1,team2,team3);
         function(team4,team5,team6);
+    }catch (NotValidIndexException ex){
+        System.out.println("Error: " + ex.getMessage());
+    }catch (NotNullValuesAllowedException ex){
+        System.out.println("Error: " + ex.getMessage());
     }
 
-    public static void function(List<String> team1, List<String> team2, List<String> team3) {
+    System.out.println("El programa no ha fallado");
 
-        team1.addAtTail("Jesús");
+    }
+
+    public static void function(List<String> team1, List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
+
+        team1.addAtTail(null);
         team1.addAtTail("Salomón");
         team1.addAtTail("Yael");
 
@@ -57,7 +67,12 @@ public class Main {
         // Cristian
 
         System.out.println();
-        team1.remove(0);
+        try{
+            team1.remove(0);
+        }catch(Exception ex){
+            System.out.println("No se pudo eliminar: " + ex.getMessage());
+        }
+
         team1.addAtFront("Rebeca");
 
         System.out.println("Team 1 tiene: " + team1.getSize() + " integrantes"); // debe imprimir "Team 1 tiene 3 integrantes"
