@@ -30,7 +30,7 @@ public class Main {
 
     public static void function(List<String> team1, List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
 
-        team1.addAtTail(null);
+        team1.addAtTail("José");
         team1.addAtTail("Salomón");
         team1.addAtTail("Yael");
 
