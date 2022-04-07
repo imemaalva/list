@@ -3,6 +3,7 @@ package uaslp.objetos.list.linkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.LinkedList;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 import uaslp.objetos.list.exception.NotValidIndexException;
 
@@ -224,7 +225,7 @@ public class LinkedListTest {
         list.addAtFront("Adiós");
 
         //When:
-        Iterator <String> iterator = list.getIterator();
+        Iterator<String> iterator = list.getIterator();
 
         //Then:
         int size = list.getSize();

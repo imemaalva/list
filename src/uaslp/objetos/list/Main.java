@@ -2,7 +2,6 @@ package uaslp.objetos.list;
 
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 import uaslp.objetos.list.exception.NotValidIndexException;
-import uaslp.objetos.list.linkedList.LinkedList;
 import uaslp.objetos.list.arrayList.ArrayList;
 
 public class Main {

@@ -8,11 +8,11 @@ public class ArrayList <T> implements List<T>{
     private int size;
 
     public ArrayList(int size){
-        array= (T[]) new Object[size];
+        array = (T[]) new Object[size];
     }
 
     public ArrayList(){
-        array=  (T[]) new Object[DEFAULT_SIZE];
+        array =  (T[]) new Object[DEFAULT_SIZE];
     }
 
     @Override
@@ -56,6 +56,7 @@ public class ArrayList <T> implements List<T>{
 
     @Override
     public T getAt(int index){
+
         return index >= 0 && index < size ? array[index] : null;
     }
 

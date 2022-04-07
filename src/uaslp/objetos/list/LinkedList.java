@@ -1,7 +1,5 @@
-package uaslp.objetos.list.linkedList;
+package uaslp.objetos.list;
 
-import uaslp.objetos.list.List;
-import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 

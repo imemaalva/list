@@ -1,6 +1,4 @@
-package uaslp.objetos.list.linkedList;
-
-import uaslp.objetos.list.Iterator;
+package uaslp.objetos.list;
 
 public class LinkedListIterator <T> implements Iterator <T> {
 
