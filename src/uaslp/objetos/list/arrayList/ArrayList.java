@@ -2,21 +2,28 @@ package uaslp.objetos.list.arrayList;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
 
-public class ArrayList <T> implements List<T>{
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+
+public class ArrayList<T> implements List<T> {
     private  static final int DEFAULT_SIZE = 2;
     private T[] array;
     private int size;
 
     public ArrayList(int size){
-        array = (T[]) new Object[size];
+        array= (T[]) new Object[size];
     }
 
     public ArrayList(){
-        array =  (T[]) new Object[DEFAULT_SIZE];
+        array= (T[]) new Object[DEFAULT_SIZE];
     }
 
     @Override
-    public void addAtTail(T data){
+    public void addAtTail(T data) throws NotNullValuesAllowedException{
+
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size == array.length){
             increaseArrayList();
         }
@@ -26,10 +33,16 @@ public class ArrayList <T> implements List<T>{
     }
 
     @Override
-    public void addAtFront(T data){
+    public void addAtFront(T data) throws NotNullValuesAllowedException{
+
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size == array.length){
             increaseArrayList();
         }
+
         if (size >= 0) System.arraycopy(array, 0, array, 1, size);
         array[0]=data;
         size++;
@@ -40,6 +53,7 @@ public class ArrayList <T> implements List<T>{
         if (index < 0 || index >= size) {
             return;
         }
+
         if (size - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, size - 1 - index);
         array[size-1]=null;
         size--;
@@ -56,12 +70,16 @@ public class ArrayList <T> implements List<T>{
 
     @Override
     public T getAt(int index){
-
         return index >= 0 && index < size ? array[index] : null;
     }
 
     @Override
-    public void setAt(int index,T data){
+    public void setAt(int index,T data) throws NotNullValuesAllowedException {
+
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if(index >= 0 && index < size)
         {
             array[index]=data;
@@ -69,9 +87,13 @@ public class ArrayList <T> implements List<T>{
     }
 
     @Override
-    public Iterator  getIterator(){
-        return new ArrayListIterator(this);
+    public Iterator<T> getIterator(){
+        return new ArrayListIterator<>(this);
     }
+
+    /*
+    public void removeAllWithValue(T data){
+    }*/
 
     @Override
     public int getSize(){
@@ -79,7 +101,7 @@ public class ArrayList <T> implements List<T>{
     }
 
     private void increaseArrayList(){
-         T[]newArray = (T[]) new Object[array.length * 2];
+        T []newArray = (T[])new Object[array.length * 2];
 
         for(int i=0;i<size;i++){
             newArray[i]=array[i];
