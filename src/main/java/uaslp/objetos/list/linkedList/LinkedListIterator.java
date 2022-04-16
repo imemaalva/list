@@ -1,6 +1,8 @@
-package uaslp.objetos.list;
+package uaslp.objetos.list.linkedList;
 
-public class LinkedListIterator <T> implements Iterator <T> {
+import uaslp.objetos.list.Iterator;
+
+public class LinkedListIterator <T> implements Iterator<T> {
 
     private Node<T> currentNode;
 

@@ -1,9 +1,11 @@
-package uaslp.objetos.list;
+package uaslp.objetos.list.linkedList;
 
+import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.List;
 import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 
-public class LinkedList <T> implements List <T>{
+public class LinkedList <T> implements List<T> {
     private Node <T> head;
     private Node <T> tail;
     private int size;
@@ -115,7 +117,7 @@ public class LinkedList <T> implements List <T>{
         return size;
     }
 
-    public Iterator <T> getIterator() {
+    public Iterator<T> getIterator() {
         return new LinkedListIterator<>(head);
     }
 }
