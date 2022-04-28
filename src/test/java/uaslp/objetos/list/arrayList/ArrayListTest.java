@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 
 public class ArrayListTest {
 
@@ -213,7 +214,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenAListWithThreeElements_whenGetIterator_thenIteratorWorksOverThreeElements() throws NotNullValuesAllowedException{
+    public void givenAListWithThreeElements_whenGetIterator_thenIteratorWorksOverThreeElements() throws NotNullValuesAllowedException, NotValidIndexException {
         //Given:
         ArrayList<String> array = new ArrayList<>();
 
